@@ -1,26 +1,28 @@
 #!/bin/bash
 
-ovn-nbctl ls-add s1
-ovn-nbctl lsp-add s1 s1-port1
+#ovn-nbctl ls-add s1
+#ovn-nbctl lsp-add s1 s1-port1
 #ovn-nbctl lsp-set-addresses s1-port1 00:00:00:00:00:01
 
-ovn-nbctl lsp-add s1 s1-port2
+#ovn-nbctl lsp-add s1 s1-port2
 #ovn-nbctl lsp-set-addresses s1-port2 00:00:00:00:00:02
 
-ovn-nbctl lsp-add s1 s1-port3
+#ovn-nbctl lsp-add s1 s1-port3
 #ovn-nbctl lsp-set-addresses s1-port3 00:00:00:00:00:03
-ovn-nbctl lsp-add s1 s1-port4
-ovn-nbctl lsp-add s1 s1-port5
+#ovn-nbctl lsp-add s1 s1-port4
+#ovn-nbctl lsp-add s1 s1-port5
 
-ovs-vsctl add-port br-int p1 -- set Interface p1 external_ids:iface-id=s1-port1
-ovs-vsctl add-port br-int p2 -- set Interface p2 external_ids:iface-id=s1-port2
-ovs-vsctl add-port br-int p3 -- set Interface p3 external_ids:iface-id=s1-port3
-ovs-vsctl add-port br-int p4 -- set Interface p4 external_ids:iface-id=s1-port4
-ovs-vsctl add-port br-int p5 -- set Interface p5 external_ids:iface-id=s1-port5
+#ovs-vsctl add-port br-int p1 -- set Interface p1 external_ids:iface-id=s1-port1
+#ovs-vsctl add-port br-int p2 -- set Interface p2 external_ids:iface-id=s1-port2
+#ovs-vsctl add-port br-int p3 -- set Interface p3 external_ids:iface-id=s1-port3
+#ovs-vsctl add-port br-int p4 -- set Interface p4 external_ids:iface-id=s1-port4
+#ovs-vsctl add-port br-int p5 -- set Interface p5 external_ids:iface-id=s1-port5
 
-#ovs-vsctl add-port br-int port1
-#ovs-vsctl add-port br-int port2
-#ovs-vsctl add-port br-int port3
+ovs-vsctl add-port br-int p1
+ovs-vsctl add-port br-int p2
+ovs-vsctl add-port br-int p3
+ovs-vsctl add-port br-int p4
+ovs-vsctl add-port br-int p5
 
 ovs-ofctl mod-port br-int p1 up
 ovs-ofctl mod-port br-int p2 up
